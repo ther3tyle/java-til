@@ -1,8 +1,5 @@
 package io.dsub.day1;
 
-import javax.swing.text.NumberFormatter;
-import java.util.stream.DoubleStream;
-
 /**
  * 변수 (Variables)
  * <p>

@@ -72,7 +72,7 @@
 - Scanner 클래스를 이용하여 입력받을 수 있다.
 
   ```java
-  import java.util.Scanner;
+  import java.io.dsub.util.Scanner;
 
   ...
 

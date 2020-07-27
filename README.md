@@ -2,7 +2,9 @@
 
 #### day 1
 
-int x, y, z = 10; // will not init x, y
+lowerCamelCase (Dromedary case) vs UpperCamelCase (Pascal case) 
+
+int x, y, z = 10; // won't init x, y
 
 Integer Variables
 
