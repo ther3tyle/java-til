@@ -1,5 +1,6 @@
 package io.dsub.day1;
 
+import javax.swing.text.NumberFormatter;
 import java.util.stream.DoubleStream;
 
 /**
@@ -29,6 +30,8 @@ public class Main {
         System.out.printf("Short\n\tByte: %d, Range: %s Val: %d ~ %d\n", Short.BYTES, "(2^15)-1 ~ -2^15", Short.MIN_VALUE, Short.MAX_VALUE);
         System.out.printf("Int\n\tByte: %d, Range: %s Val: %d ~ %d\n", Integer.BYTES, "(2^31)-1 ~ -2^31", Integer.MIN_VALUE, Integer.MAX_VALUE);
         System.out.printf("Long\n\tByte: %d, Range: %s Val: %d ~ %d\n", Long.BYTES, "(2^63)-1 ~ -2^63", Long.MIN_VALUE, Long.MAX_VALUE);
+
+        System.out.printf("\n\n");
 
         // Overflow
         // 32767 = 2^15 - 1 => 01111111111111111
