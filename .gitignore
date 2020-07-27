@@ -1,4 +1,8 @@
-#JetBrains
+# JetBrains
 .idea
-.DS_Store
 java-til.iml
+
+# MacOS
+.DS_Store
+
+out
