@@ -1,12 +1,6 @@
 package io.dsub.util;
 
 public class BaseShifter {
-
-    public static void main(String[] args) {
-        String bin = "0b101";
-        System.out.println(BaseShifter.shift(2, 10, bin));
-    }
-
     private BaseShifter(){}
     private static String shift(int base, int target, String data) {
         final char[] baseDict = "0123456789ABCDEF".toCharArray();

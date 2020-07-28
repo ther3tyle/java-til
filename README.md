@@ -1,11 +1,24 @@
 #TIL for Java
 
+#### day 2
+
+
+
+
+
+
+
 #### day 1
 
 lowerCamelCase (Dromedary case) vs UpperCamelCase (Pascal case) 
 
-int x, y, z = 10; // won't init x, y
-
+```Java
+class main {
+    public static void main(String[] args) {
+        int x, y, z = 10; // won't init x, y
+    }
+};
+```
 Integer Variables
 
 Name  | Byte| Range           | Min                |Max

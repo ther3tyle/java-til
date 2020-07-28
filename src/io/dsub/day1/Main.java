@@ -47,7 +47,8 @@ public class Main {
         System.out.printf("Overflow: %d < %d ? %b\n", bigInt, biggerInt, bigInt < biggerInt);
 
         long veryBigint = 1000000000000000000L;
-        System.out.println(veryBigint);
+        int cutInteger = (int)veryBigint;
+        System.out.printf("%d, %d\n", veryBigint, cutInteger);
 
         // Binary, Octal, Decimal, Hexadecimal (2, 8, 10, 16 진수)
         System.out.println(0b1101);
