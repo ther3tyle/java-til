@@ -57,5 +57,4 @@ public class Main {
 
         byte flag = 0b00101100; // use each bit
     }
-
 }
