@@ -9,7 +9,7 @@ public class ScannerDemo {
         int[] data = new int[3];
         int i = 0;
         while (i < 3) {
-            data[i++] = scanner.nextInt(); // next awaits next input. this is called blocking method.
+            data[i++] = scanner.nextInt(); // next awaits next input -> blocking...
         }
         System.out.printf("Done! [%d, %d, %d]\n", data[0], data[1], data[2]);
         System.out.printf("%s\ncount 1\n",scanner.nextLine());

@@ -5,58 +5,57 @@ package io.dsub.day2;
  * 연산자(Operator), 피연산자(Operand) -> 연산식(Expression)
  * 사칙 연산자: + - * /
  * 비교 연산자: > >= == <= <
- * 논리 연산자:
- * 증감 연산자:
- * 삼항 연산자:
- * 비트 연산자:
+ * 논리 연산자: & | ^ !
+ * 증감 연산자: ++ --
+ * 삼항 연산자: ?:
+ * 비트 연산자: >> >>> << & | ^
  */
 
 public class OperatorDemo {
     public static void main(String[] args) {
         int x = 10, y = 20, z;
         z = x + y;  // +: 연산자, x, y = 피연산자, x + y = expression
-        // =: 연산자, z = 피연산자
-        System.out.println(z);
-
         System.out.println("정수형 사칙연산");
-        System.out.printf("%-10s = %-8d\n", "20 - 5", 20 - 5);
-        System.out.printf("%-10s = %-8d\n", "5 - 20", 5 - 20);
-        System.out.printf("10 * 662  = %8d\n", 10 * 662);
-        System.out.printf("150 / 8   = %8d\n", 150 / 8);
-        System.out.printf("150 %c 8  = %8d\n", '%', 150 % 8);
+        printExpr("20 - 5", String.format("%8d", 20 - 5));
+        printExpr("5 - 20", String.format("%8d", 5 - 20));
+        printExpr("10 * 662", String.format("%8d", 10 * 662));
+        printExpr("150 / 8", String.format("%8d", 150 / 8));
+        printExpr("150 % 8", String.format("%8d", 150 % 8));
         System.out.println();
 
         System.out.println("실수형 사칙연산");
-        System.out.printf("10.0 + 52.3 = %f\n", 10.0 + 52.3);
-        System.out.printf("10.5f + 12.3 = %f\n", 10.5f + 12.3);
-        System.out.printf("10.4 - 50 = %f\n", 10.4 - 50);
-        System.out.printf("10.2 * 4.2 = %f\n", 10.2 * 4.2);
-        System.out.printf("150 / 8.0 = %f\n", 150 / 8.0);
-        System.out.printf("5.2 / 1.2 = %f\n", 5.2 / 1.2);
-        System.out.printf("5.2 %c 1.2 = %f\n", '%', 5.2 % 1.2);
+        printExpr("10.0 + 52.3", String.format("%8.2f", 10.0 + 52.3));
+        printExpr("10.5f + 12.3", String.format("%8.2f", 10.5f + 12.3));
+        printExpr("10.4 - 50", String.format("%8.2f", 10.4 - 50));
+        printExpr("10.2 * 4.2", String.format("%8.2f", 10.2 * 4.2));
+        printExpr("150 / 8.0", String.format("%8.2f", 150 / 8.0));
+        printExpr("5.2 / 1.2", String.format("%8.2f", 5.2 / 1.2));
+        printExpr("5.2 % 1.2", String.format("%8.2f", 5.2 % 1.2));
 
         System.out.println();
-        System.out.println("사칙 연산의 주의사항");
+        System.out.printf("+=+=+=+ %s +=+=+=+\n", "사칙 연산의 주의사항");
         System.out.printf("%-10s // %d\n", "underflow", Integer.MIN_VALUE - 1);
         System.out.printf("%-10s // %d\n", "overflow", Integer.MAX_VALUE + 1);
+        System.out.println();
 
-        int maxVal = 0b01111111111111111111111111111111;
-        int negVal = 0b10000000000000000000000000000001;
-        System.out.println(maxVal + "\n");
-        int minVal = 0b10000000000000000000000000000000;
+        System.out.printf("+=+=+=+ %s +=+=+=+\n", "1의 보수를 통한 2진수 값의 음수, 양수 전환");
+        System.out.printf("%s -> %s\n", "0b01111111111111111111111111111111", "0b10000000000000000000000000000001\n");
 
-        System.out.println("실수 연산에서 주의해야할 사항");
-        System.out.println((6 - 5.9) * 10); // 6.0 의 정밀도 문제. 실수형 데이터의 경우에는 정수로 사용하려고 할 때 문제가 될 수 있을 것.
-        System.out.println(40 / 0.0); // Infinity -> 일반적으로 Inf 에 의해 NaN 띄우는 경우가 많다.
-        System.out.println(40 % 0.0); // NaN
+        System.out.printf("+=+=+=+ %s +=+=+=+\n", "실수 연산에서 주의해야할 사항");
+        printExpr("(6 - 5.9) * 10", String.valueOf((6 - 5.9) * 10));
+        printExpr("40 / 0.0", String.valueOf(40 / 0.0));
+        printExpr("40 % 0.0", String.valueOf(40 % 0.0));
+
+        System.out.println();
 
         // 대입 연산자
-        z = x + y;
-        z += 10; // z = z + 10;
-        z %= 2;
-
+        z += 2;
+        System.out.println("대입 연산자");
+        System.out.printf("current z -> %d\n", z);
+        System.out.printf("z += 2; sout(z) -> %s\n", z);
 
         // 비교 연산자
+        System.out.println();
         int a = 1, b = 2;
         System.out.println("비교 연산자");
         System.out.printf("%b %b %b\n", a > b, a < b, a == b);
@@ -68,16 +67,20 @@ public class OperatorDemo {
         // a XOR b : true only when A != B && (A == true) || (B == true)
         // NOT   a : true if A == false (단항 연산자 - Single Operand)
 
-        System.out.println(10 < 20 & 40 >= 2); //AND
-        System.out.println(40 < 20 | 20 < 40); //OR
-        System.out.println(true ^ true); //XOR
-        System.out.println(!false); //NOT
+        System.out.println();
+        System.out.printf("%s\n\t%-15s -> %-15s\n","AND(&)", "(10 < 20 & 40 >= 2)", String.valueOf(10 < 20 & 40 >= 2));
+        System.out.printf("%s\n\t%-15s -> %-15s\n","OR(|)", "(40 < 20 | 20 < 40)", String.valueOf(40 < 20 | 20 < 40));
+        System.out.printf("%s\n\t%-15s -> %-15s\n","XOR(^)", "true ^ true", String.valueOf(true ^ true));
+        System.out.printf("%s\n\t%-15s -> %-15s\n","NOT(!)", "!true", String.valueOf(!true));
 
-        // short-circuit
-        System.out.println("b" == "b");
-        System.out.println(false || true);
+        // Short-Circuit
+        // You may assume this would be slower, but that is not the case in Java.
+        System.out.println("\nShort-Circuit");
+        printExpr("\"b\" == \"b\"", String.valueOf("b" == "b"));
+        printExpr("false || true", String.valueOf(false || true));
 
         // 증감 연산자
+        System.out.println();
         int i = 10;
         System.out.printf("%d %d %d %d\n", i++, ++i, --i, i--); // expr eval 이후 적용 혹은 전에 적용
         // System.out.println(i++); == sout(i); i+=1;
@@ -129,5 +132,9 @@ public class OperatorDemo {
 
     private static void printBinary(int number) {
         System.out.printf("0b%32s\n", Integer.toBinaryString(number));
+    }
+
+    private static void printExpr(String expr, String res) {
+        System.out.printf("%-14s = %14s\n", expr, res);
     }
 }
