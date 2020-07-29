@@ -1,4 +1,4 @@
-package io.dsub.day1;
+package io.dsub.lectures.day01;
 
 /**
  * 변수 (Variables)

@@ -2,7 +2,7 @@ package io.dsub.util;
 
 public class BaseShifter {
     private BaseShifter(){}
-    private static String shift(int base, int target, String data) {
+    public static String shift(int base, int target, String data) {
         final char[] baseDict = "0123456789ABCDEF".toCharArray();
         boolean shift = false;
 
