@@ -1,7 +1,6 @@
 package io.dsub.homework.day03;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -31,103 +30,40 @@ public class ThreeSixNineAdvanced {
     public static void main(String[] args) {
         int gameLength = 1000;
         int numPeople = 12;
-        int myTurn = 3;
+        int myTurn = 1;
         // write codes here
-        solutionOne(gameLength, numPeople, myTurn);
-        solutionTwo(gameLength, numPeople, myTurn);
+        solver(gameLength, numPeople, myTurn);
     }
 
-    public static void solutionOne(int gameLength, int numPeople, int myTurn) {
-        List<String> list = new ArrayList<>();
-        StringBuilder sb = new StringBuilder();
-
+    private static void solver(int gameLength, int numPeople, int myTurn) {
         for (int i = myTurn; i < gameLength; i += numPeople) {
-
-            char[] chars = String.valueOf(i).toCharArray();
-
-            for (int j = chars.length - 1; j >= 0; j--) {
-                int num = chars[j] - 48;
-                if (sb.length() > 0 && sb.charAt(sb.length() - 1) != '!') {
-                    if ((num % 3 == 0 && num != 0) || num == 5)
-                        sb.insert(1, "!");
-                }
-
-                if ((num % 3 == 0 && num != 0 || num == 5)) {
-                    if (num % 3 == 0) sb.insert(0, "짝!");
-                    if (num == 5) sb.insert(0, "쿵!");
-                    continue;
-                }
-
-                if (sb.length() > 0 && (sb.charAt(0) == '쿵' || sb.charAt(0) == '짝')) {
-                    sb.insert(0, "!").insert(0, num);
-                    continue;
-                }
-
-                sb.insert(0, num);
-            }
-            if (sb.charAt(sb.length() - 1) != '!') sb.append("!");
-            list.add(sb.toString());
-            sb.delete(0, sb.length());
-        }
-
-        for (String s : list) System.out.println(s);
-    }
-
-
-    public static void solutionTwo(int gameLength, int numPeople, int myTurn) {
-
-        Stack<Integer> numStack = new Stack<>();
-        Stack<String> strStack = new Stack<>();
-        StringBuilder sb = new StringBuilder();
-
-        for (int i = myTurn; i < gameLength; i += numPeople) {
+            int numClap = 0, numRoll = 0;
             int cpNum = i;
-            while (cpNum != 0) {
-                int num = cpNum % 10;
+            while (cpNum > 0) {
+                int sDigit = cpNum % 10;
                 cpNum /= 10;
-                numStack.push(num);
-            }
-            numStack.push(-1);
-        }
-
-        boolean isEnd = false;
-
-        while (!numStack.isEmpty()) {
-            int num = numStack.pop();
-
-            if (numStack.isEmpty() && sb.length() == 0) {
-                if (num % 3 == 0 && num != 0) sb.append("짝!");
-                else if (num == 5) sb.append("쿵!");
-                else if (num != -1) sb.append(num).append("!");
-
-                strStack.push(sb.toString());
-                continue;
-            } else {
-                int peek = numStack.peek();
-                if (peek % 3 == 0 && peek != 0) {
-                    isEnd = true;
-                } else if (peek == -1 || peek == 5) {
-                    isEnd = true;
+                if (sDigit % 3 == 0 && sDigit != 0) {
+                    numClap++;
+                } else if (sDigit == 5) {
+                    numRoll++;
                 }
             }
-
-            if (num < 0) {
-                if (sb.length() == 0) continue;
-                strStack.push(sb.toString());
-                sb.delete(0, sb.length());
-            }
-
-            if (num % 3 == 0 && num != 0) sb.append("짝");
-            else if (num == 5) sb.append("쿵");
-            else if (num != -1) sb.append(num);
-
-            if (isEnd && sb.length() > 0) {
-                isEnd = false;
-                sb.append("!");
+            if (numClap + numRoll == 0) {
+                System.out.println(i + "!");
+            } else {
+                while (numClap > 0 || numRoll > 0) {
+                    if (numClap > numRoll) {
+                        System.out.print("짝!");
+                        if (numRoll > 0) System.out.print("쿵");
+                    } else {
+                        System.out.print("쿵!");
+                        if (numClap > 0) System.out.print("짝!");
+                    }
+                    numClap--;
+                    numRoll--;
+                }
+                System.out.println();
             }
         }
-
-        while (strStack.isEmpty())
-            System.out.println(strStack.pop());
     }
 }

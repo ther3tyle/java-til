@@ -56,5 +56,25 @@ public class Main {
         charVal = 4123;
         byteVal = (byte) charVal;
         System.out.println(byteVal);
+
+        /**
+         * Short Circuit 보강 수업
+         */
+
+        // 일반적인 &
+        a = 0;
+        int b = 0;
+        System.out.println(a > 0 & b > 0);
+        System.out.println(a++ > 0 & b++ > 0);
+        System.out.println(a + ", " + b);
+
+        // Short Circuit &&
+        a = 0;
+        b = 0;
+        System.out.println(a++ > 0 && b++ > 0); // a > 0 가 이미 false 를 보여주므로 b++ 를 처리하지 않았다.
+        System.out.println(a + ", " + b);
+
+        // || 는 첫번째가 참이면 뒤를 계산하지 않는다.
+        // && 는 첫번째가 거짓이면 뒤를 계산하지 않는다.
     }
 }
