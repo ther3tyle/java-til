@@ -1,8 +1,5 @@
 package io.dsub.homework.day03;
 
-import java.util.Arrays;
-import java.util.Stack;
-
 /**
  * 369게임+
  * <p>
@@ -30,7 +27,7 @@ public class ThreeSixNineAdvanced {
     public static void main(String[] args) {
         int gameLength = 1000;
         int numPeople = 12;
-        int myTurn = 1;
+        int myTurn = 3;
         // write codes here
         solver(gameLength, numPeople, myTurn);
     }
