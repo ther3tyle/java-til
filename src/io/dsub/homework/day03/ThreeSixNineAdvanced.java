@@ -25,7 +25,7 @@ package io.dsub.homework.day03;
 
 public class ThreeSixNineAdvanced {
     public static void main(String[] args) {
-        int gameLength = 1000;
+        int gameLength = 65000;
         int numPeople = 12;
         int myTurn = 3;
         // write codes here
@@ -51,7 +51,7 @@ public class ThreeSixNineAdvanced {
                 while (numClap > 0 || numRoll > 0) {
                     if (numClap > numRoll) {
                         System.out.print("짝!");
-                        if (numRoll > 0) System.out.print("쿵");
+                        if (numRoll > 0) System.out.print("쿵!");
                     } else {
                         System.out.print("쿵!");
                         if (numClap > 0) System.out.print("짝!");
