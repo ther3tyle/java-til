@@ -13,15 +13,15 @@ import java.util.Scanner;
 public class InputOutput {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int min = Integer.MAX_VALUE, count = 3;
+        int max = Integer.MIN_VALUE, count = 3;
 
         while (count-- > 0) {
             System.out.print("Enter a number: ");
             int input = sc.nextInt();
-            min = Math.min(min, input);
+            max = Math.max(max, input);
             System.out.println();
         }
 
-        System.out.printf("Result >> %d\n", min);
+        System.out.printf("Result >> %d\n", max);
     }
 }

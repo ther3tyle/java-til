@@ -25,10 +25,16 @@ public class PrintFormat {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter Patient ID:");
         int id = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter Patient Disease:");
         String s1 = scanner.nextLine();
+        System.out.print("Enter Patient Info:");
         String s2 = scanner.nextLine();
         printBox(id, s1, s2);
+
+        scanner.close();
     }
 
     private static void printBox(int id, String dName, String info) {
