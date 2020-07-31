@@ -33,7 +33,7 @@ public class ThreeSixNineAdvanced {
     }
 
     private static void solver(int gameLength, int numPeople, int myTurn) {
-        for (int i = myTurn; i < gameLength; i += numPeople) {
+        for (int i = myTurn; i <= gameLength; i += numPeople) {
             int numClap = 0, numRoll = 0;
             int cpNum = i;
             while (cpNum > 0) {
