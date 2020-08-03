@@ -1,11 +1,11 @@
-#객체 지향 프로그래밍 (Object Oriented Programming; OOP)
-##객체 지향 프로그래밍이란
+# 객체 지향 프로그래밍 (Object Oriented Programming; OOP)
+## 객체 지향 프로그래밍이란
 
 - 컴퓨터 프로그래밍 패러다임 중 하나
 - 프로그램을 명령어의 목록으로 보는 시각(절차 지향)에서 벗어나, 독립된 단위인 객체의 모임으로 파악
 - 각각의 객체는 메세지를 주고 받고 데이터를 처리 (협력)
 
-##객체 지향의 기본 구성 요소
+## 객체 지향의 기본 구성 요소
 - 클래스(Class)
     - 같은 종류의 집단에 속하는 속성과 행위를 정의한 것
         - 같은 종류의 집단: 같은 클래스에 속하는 여러 청사진들이 존재할 수 있음
@@ -20,7 +20,7 @@
     - 클래스로부터 생성된 객체를 사용하는 방법
     - 메소드는 한 객체의 속성을 조작하는 데에 사용
 
-##객체 지향의 특징
+## 객체 지향의 특징
 - OOP is A.P.I.E
     - Abstraction(추상화): 자료 표현을 추상적으로 나타ㅐ는 추상 자료형을 사용한다.
     - Polymorphism(다형성): 오버로딩과 오버라이딩을 하여 하나의 메소드명으로 다양한 동작을 구현할 수 있다.
@@ -28,9 +28,9 @@
     - Encapsulation(캡슐화): 사용자에게 불필요한 정보를 은닉/보호해야 한다. 
 
 ---
-#OOP Examples
+# OOP Examples
 
-##Instantiation of a class
+## Instantiation of a class
 ```java
 /**
  * Class - Blueprint for an object instantiation
@@ -62,7 +62,7 @@ public class OOPDemo {
     }
 }
 ```
-##Memory structure
+## Memory structure
 ```java
 /**
  * Class and Instance Memory Structure
@@ -87,7 +87,7 @@ public class MemoryStructure { // Class Area
 }
 ```
 
-##Variables of a Class
+## Variables of a Class
 ```java
 /**
  * Variables
