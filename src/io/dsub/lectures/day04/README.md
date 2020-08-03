@@ -21,7 +21,7 @@ double|0.0  |                           |
 
 
 
-####instantiates
+####Instance
 
 > There are three distinct methods to instantiate an array
 ```java
@@ -38,7 +38,7 @@ public class Demo {
 };
 ```
 
-#### Cloning arrays
+#### Clone
 
 ```java
 public class Demo {   
