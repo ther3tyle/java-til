@@ -11,7 +11,7 @@
 ```java
 (6 - 5.9) * 10; 
 // the precision matters, as for double it is natural NOT to resulting 1.0
-// for monetary calculation or you need extra precision, use BigDecimal.class
+// for monetary calculation or if you need extra precision, use BigDecimal.class
 ```
 
 - PrintFormat
