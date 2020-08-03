@@ -20,8 +20,11 @@ public class MaxSum {
         System.out.println(getMaxSum(new int[]{1, 45, -2, 5, -6}));
         System.out.println(getMaxSum(new int[]{-4, 5, 12, -7, 52, -5, 7}));
         System.out.println(getMaxSum(integers));
+
+
     }
 
+    // O(N^2)
     private static int getMaxSum(int[] nums) {
         int max = 0, total = 0;
 
@@ -43,5 +46,17 @@ public class MaxSum {
         }
 
         return max;
+    }
+
+    // O(N)
+    private static int sum(int[] integers) {
+        int maxSum = 0;
+        int currSum = 0;
+        for (int elem : integers) {
+            currSum += elem;
+            currSum = Math.max(currSum, elem);
+            maxSum = Math.max(currSum, maxSum);
+        }
+        return maxSum;
     }
 }
