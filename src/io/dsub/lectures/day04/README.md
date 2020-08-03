@@ -6,7 +6,7 @@
 
 > Values are stored in sequential manner
 
-####ZERO VALUES FOR ARRAY
+#### ZERO VALUES FOR ARRAY
 
 Type  |Value|Comment                    |
 ------|-----|---------------------------|
