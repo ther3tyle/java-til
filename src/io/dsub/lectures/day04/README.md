@@ -68,7 +68,7 @@ public class Demo {
 }
 ```
 
-###N-D Arrays
+### N-D Arrays
 
 > Syntax is almost identical to any arrays
 
