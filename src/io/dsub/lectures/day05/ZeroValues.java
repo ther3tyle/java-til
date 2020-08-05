@@ -22,6 +22,6 @@ public class ZeroValues {
         System.out.println("zeroFloat: " + values.zeroFloat);
         System.out.println("zeroDouble: " + values.zeroDouble);
         System.out.println("zeroString: " + values.zeroString);
-        System.out.println("zeroChar: " + (int) values.zeroChar);
+        System.out.println("zeroChar: " + (int) values.zeroChar); // '\u0000'
     }
 }
