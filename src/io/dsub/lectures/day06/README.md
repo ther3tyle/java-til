@@ -350,7 +350,7 @@ class MainTest {
 
 ---
 
-#####KEYPOINT
+##### KEYPOINT
 1. Static Initializer 는 객체화와 관계 없이 반드시 실행된다.
 2. Initializer 는 클래스가 객체화 될 때 마다 해당 객체에 대해 실행된다.
 3. 두 Initializer 는 위에서 아래로 실행된다.
