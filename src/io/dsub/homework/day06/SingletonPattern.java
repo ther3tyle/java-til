@@ -11,14 +11,8 @@ package io.dsub.homework.day06;
  */
 
 public class SingletonPattern {
-
-    // private constructor prevents default constructor generation
     private SingletonPattern() {}
-
-    // the one and only instance
-    private static SingletonPattern instance;
-
-    // getter for the instance
+    private static final SingletonPattern instance = new SingletonPattern();
     public static SingletonPattern getInstance() {
         return instance;
     }
@@ -26,7 +20,7 @@ public class SingletonPattern {
 
 class SingletonPatternTest {
     public static void main(String[] args) {
-        // SingletonPattern instance = new SingletonPattern(); // should fail
+//         SingletonPattern instance = new SingletonPattern(); // should fail
         SingletonPattern instanceOne = SingletonPattern.getInstance();
         SingletonPattern instanceTwo = SingletonPattern.getInstance();
 

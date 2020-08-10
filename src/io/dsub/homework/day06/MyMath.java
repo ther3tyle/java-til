@@ -66,8 +66,8 @@ public class MyMath {
      */
     public static double floor(double param) {
         if (param < 0)
-            return (int)param  - 1;
-        return (int) param;
+            return (int)param - 1;
+        return (int)param;
     }
 
     /**

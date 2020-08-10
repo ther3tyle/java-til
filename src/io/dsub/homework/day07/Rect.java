@@ -34,6 +34,7 @@ class RectCore {
         this.h = h;
     }
 
+    @Override
     public String toString() {
         return pos.toString() + " " + String.format("w: %.3f h: %.3f", w, h);
     }
@@ -51,7 +52,7 @@ public class Rect extends RectCore {
 
     public Vector2D getCenterOfMass() {
         // write codes here
-        return new Vector2D(this.pos.x + this.w / 2, this.pos.y + this.h / 2);
+        return new Vector2D(this.pos.x + this.w / 2.0f, this.pos.y + this.h / 2.0f);
     }
 
     // A, B, C, D represents clock-wise, starting from left lower position
@@ -67,6 +68,33 @@ public class Rect extends RectCore {
     public void rot90(Vector2D pivot) {
         this.rotate(pivot, 90);
     }
+
+    public void ans(Vector2D pivot) {
+        Vector2D [] oldPoints = getAllPoints();
+        Vector2D [] newPoints = new Vector2D[4];
+        for (int i = 0; i < oldPoints.length; i++) {
+            newPoints[i] = new Vector2D(
+                    -(oldPoints[i].y - pivot.y) + pivot.x,
+                    (oldPoints[i].x - pivot.x) + pivot.y
+            );
+        }
+
+        float min_x = newPoints[0].x;
+        float min_y = newPoints[0].y;
+        float max_x = newPoints[0].x;
+        float max_y = newPoints[0].y;
+        for (Vector2D vector2D: newPoints) {
+            min_x = Math.min(vector2D.x, min_x);
+            min_y = Math.min(vector2D.y, min_y);
+            max_x = Math.max(vector2D.x, max_x);
+            max_y = Math.max(vector2D.y, max_y);
+        }
+
+        pos = new Vector2D(min_x, min_y);
+        w = max_x - min_x;
+        h = max_y - min_y;
+    }
+
 
     private void rotate(Vector2D pivot, float angle) {
         Vector2D[] points = this.getAllPoints();
@@ -86,6 +114,7 @@ public class Rect extends RectCore {
         return new Vector2D(rotatedX, rotatedY);
     }
 
+    @Override
     public String toString() {
         return String.format("Position: %s Points: %s", this.pos, Arrays.toString(this.getAllPoints()));
     }
@@ -99,7 +128,6 @@ class RectTest {
         System.out.println("All Points: " + Arrays.toString(rect.getAllPoints()));
 
         rect.rot90(new Vector2D(0.4f, 0.2f));
-
         System.out.println("Rotated rect: " + rect);
     }
 }
