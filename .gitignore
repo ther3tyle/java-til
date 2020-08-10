@@ -225,4 +225,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# gitignore
+.gitignore
+
 # End of https://www.toptal.com/developers/gitignore/api/intellij+all,java,jetbrains+all,macos,windows
