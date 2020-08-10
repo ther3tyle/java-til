@@ -106,8 +106,8 @@ public class Main {
 }
 ```
 
-#Method Overriding (메소드의 재정의)
-####KEYPOINT
+# Method Overriding (메소드의 재정의)
+#### KEYPOINT
 > 다형성(Polymorphism)의 근간이 된다.
 
 ```java
