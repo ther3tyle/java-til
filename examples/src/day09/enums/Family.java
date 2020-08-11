@@ -14,6 +14,7 @@ public enum Family {
     }
 
     public void setKoreanWord(String koreanWord) {
+        if (koreanWord.length() == 0) return;
         this.koreanWord = koreanWord;
     }
 }

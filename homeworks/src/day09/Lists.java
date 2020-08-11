@@ -31,8 +31,9 @@ interface List {
 }
 
 class IntArrayList implements List {
-
+    // capacity of current data array
     private int capacity;
+    // quantity
     private int length;
     private int[] data;
 
@@ -68,11 +69,11 @@ class IntArrayList implements List {
         if (index >= this.capacity || this.isFull()) {
             this.capacity *= 2;
             int[] dataCopy = new int[this.capacity];
-            System.arraycopy(this.data, 0, dataCopy, 0, this.length);
+            System.arraycopy(this.data, 0, dataCopy, 0, this.data.length);
             this.data = dataCopy;
         }
 
-        int cpLength = this.length - index - 1;
+        int cpLength = this.length - index;
         if (cpLength < 0) {cpLength = 0;}
 
         System.arraycopy(this.data, 0, this.data, 0, index);
@@ -84,14 +85,11 @@ class IntArrayList implements List {
 
     @Override
     public void remove(int index) {
-        if (index < 0 || index >= this.length) return;
-
-        int[] dataCopy = new int[this.capacity];
-
-        System.arraycopy(this.data, 0, dataCopy, 0, index);
-        System.arraycopy(this.data, index, dataCopy, index + 1, this.capacity - index - 1);
-
-        this.data = dataCopy;
+        if (index < 0) index = 0;
+        if (index >= this.length) index = this.length - 1;
+        System.arraycopy(this.data, 0, this.data, 0, index);
+        System.arraycopy(this.data, index + 1, this.data, index, this.capacity - index - 1);
+        this.length--;
     }
 
     @Override
@@ -138,7 +136,10 @@ class IntArrayList implements List {
         list.insert(100, 33);
         list.insert(3, 423);
 
-        if (!list.toString().equals("[11 10 9 423 8 7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 8 9 10 0 0]"))
+        list.remove(3);
+        list.remove(333);
+
+        if (!list.toString().equals("[11 10 9 8 7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 8 9 10 11]"))
             System.out.println("FAIL");
         else
             System.out.println("SUCCESS");
