@@ -1,7 +1,5 @@
 package day09;
 
-import java.util.Arrays;
-
 /**
  * List 인터페이스를 구현하여 IntArrayList 클래스를 완성하시오.
  * <p>
@@ -54,28 +52,33 @@ class IntArrayList implements List {
         this.insert(0, value);
     }
 
+    /**
+     * Inserts value to given index.
+     * If index is larger than current content length,
+     * the insert index will be set to the last sequential position.
+     *
+     * @param index target position of insertion
+     * @param value target value
+     */
     @Override
     public void insert(int index, int value) {
+        if (index - 1 > this.length)
+            index = this.length;
 
-        if (this.isFull()) this.capacity *= 2;
-
-        while (index >= this.capacity) {
+        if (index >= this.capacity || this.isFull()) {
             this.capacity *= 2;
-        }
-
-        int[] dataCopy = new int[this.capacity];
-
-        if (index == 0)
-            System.arraycopy(this.data, 0, dataCopy, 1, this.length);
-        else if (index >= this.data.length - 1) {
+            int[] dataCopy = new int[this.capacity];
             System.arraycopy(this.data, 0, dataCopy, 0, this.length);
-        } else {
-            System.arraycopy(this.data, 0, dataCopy, 0, index);
-            System.arraycopy(this.data, index, dataCopy, index, this.data.length - index);
+            this.data = dataCopy;
         }
 
-        dataCopy[index] = value;
-        this.data = dataCopy;
+        int cpLength = this.length - index - 1;
+        if (cpLength < 0) {cpLength = 0;}
+
+        System.arraycopy(this.data, 0, this.data, 0, index);
+        System.arraycopy(this.data, index, this.data, index + 1, cpLength);
+
+        this.data[index] = value;
         this.length++;
     }
 
@@ -86,7 +89,7 @@ class IntArrayList implements List {
         int[] dataCopy = new int[this.capacity];
 
         System.arraycopy(this.data, 0, dataCopy, 0, index);
-        System.arraycopy(this.data, index + 1, dataCopy, index, this.capacity - index - 1);
+        System.arraycopy(this.data, index, dataCopy, index + 1, this.capacity - index - 1);
 
         this.data = dataCopy;
     }
@@ -110,6 +113,34 @@ class IntArrayList implements List {
 
     @Override
     public String toString() {
-        return Arrays.toString(this.data);
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < this.length; i++) {
+            sb.append(String.format("%d", this.get(i)));
+            if (i < this.length - 1)
+                sb.append(" ");
+        }
+        sb.append("]");
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        List list = new IntArrayList(5);
+
+        for (int i = 0; i < 12; i++) {
+            list.append(i);
+        }
+
+        for (int i = 0; i < 12; i++) {
+            list.prepend(i);
+        }
+
+        list.insert(100, 33);
+        list.insert(3, 423);
+
+        if (!list.toString().equals("[11 10 9 423 8 7 6 5 4 3 2 1 0 0 1 2 3 4 5 6 7 8 9 10 0 0]"))
+            System.out.println("FAIL");
+        else
+            System.out.println("SUCCESS");
     }
 }
