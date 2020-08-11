@@ -35,7 +35,9 @@ class Fruit {
 }
 
 class Orange extends Fruit {
+    
     int sweetness = 10;
+    
     @Override
     public Orange getSelf() {
         return this;
