@@ -83,6 +83,6 @@ public class LambdaExpressions {
         Algorithm<String, Integer> algorithm = new Algorithm<>();
         System.out.println(
                 algorithm.test("aaabb38217dfdfddd33216222",
-                        6, input -> new StrongPasswordChecker().check(input)));
+                        6, new StrongPasswordChecker()::check));
     }
 }
