@@ -17,6 +17,7 @@ class Algorithm<T, R> {
     }
 }
 
+// https://leetcode.com problem #420
 class StrongPasswordChecker {
     public Integer check(String s) {
         char[] str = s.toCharArray();
