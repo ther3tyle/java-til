@@ -17,9 +17,8 @@ class Algorithm<T, R> {
     }
 }
 
-class StrongPasswordChecker implements Solution<String, Integer> {
-    @Override
-    public Integer solve(String s) {
+class StrongPasswordChecker {
+    public Integer check(String s) {
         char[] str = s.toCharArray();
         boolean isUpper = false, isLower = false, isDigit = false;
         int missingType = 3;
@@ -84,8 +83,6 @@ public class LambdaExpressions {
         Algorithm<String, Integer> algorithm = new Algorithm<>();
         System.out.println(
                 algorithm.test("aaabb38217dfdfddd33216222",
-                        6,
-                        new StrongPasswordChecker())
-        );
+                        6, input -> new StrongPasswordChecker().check(input)));
     }
 }
