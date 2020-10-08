@@ -53,7 +53,6 @@ enum Item {
     }
 }
 
-// TODO: Player에 필요한 메소드 구현
 // 무기 교체, 아이템 사용, 아이템 효과 종료 메소드 구현
 class Player {
     private Weapon currentWeapon;
@@ -108,7 +107,7 @@ class Player {
         this.items.addAll(Arrays.asList(items));
     }
 
-    public void updateFormula() {
+    private void updateFormula() {
         if (this.activeItems.size() > 0) {
             this.formula = activeItems
                     .stream()
@@ -129,17 +128,17 @@ public class DamageCalculation {
 
         Player player = new Player();
         player.addItems(Item.BLACK_POTION);
-        testConsumer.accept((double) 5, player.getCurrentDmg());
+        testConsumer.accept(5.0, player.getCurrentDmg());
         player.usePotion(Item.BLACK_POTION);
         testConsumer.accept(5.5, player.getCurrentDmg());
         player.changeWeapon(Weapon.DRAGON_SLAYER);
-        testConsumer.accept((double) 275, player.getCurrentDmg());
+        testConsumer.accept(275.0, player.getCurrentDmg());
         player.disableItem(Item.BLACK_POTION);
-        testConsumer.accept((double) 250, player.getCurrentDmg());
+        testConsumer.accept(250.0, player.getCurrentDmg());
         player.addItems(Item.BLACK_POTION, Item.MUSHROOM, Item.WHITE_POTION);
         player.usePotion(Item.MUSHROOM);
         player.usePotion(Item.BLACK_POTION);
         player.usePotion(Item.WHITE_POTION);
-        testConsumer.accept((double) 497, player.getCurrentDmg());
+        testConsumer.accept(497.0, player.getCurrentDmg());
     }
 }
