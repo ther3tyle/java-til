@@ -1,6 +1,5 @@
 package io.dsub.day21;
 
-import org.hamcrest.CoreMatchers.*;
 import org.junit.Before;
 import org.junit.Test;
 
