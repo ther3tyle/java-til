@@ -1,4 +1,4 @@
-package main.io.dsub.day06;
+package io.dsub.day06;
 
 public class UserCharacter {
     private int hp;

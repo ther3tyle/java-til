@@ -1,4 +1,4 @@
-package main.io.dsub.day08.poly02;
+package io.dsub.day08.poly02;
 
 /**
  * 멤버 변수의 재정의는 선언된 객체의 타입을 따른다. (문법적으로 본다)

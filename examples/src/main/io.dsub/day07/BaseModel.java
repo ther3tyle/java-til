@@ -1,4 +1,4 @@
-package main.io.dsub.day07;
+package io.dsub.day07;
 
 import java.time.LocalDateTime;
 import java.util.UUID;

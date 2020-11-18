@@ -1,4 +1,4 @@
-package main.io.dsub.day04;
+package io.dsub.day04;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package main.io.dsub.day05;
+package io.dsub.day05;
 
 /**
  * 클래스와 객체의 메모리 구조

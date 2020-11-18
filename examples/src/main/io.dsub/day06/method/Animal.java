@@ -1,4 +1,4 @@
-package main.io.dsub.day06.method;
+package io.dsub.day06.method;
 
 /**
  * Example for getter and setter, access modifier (private)

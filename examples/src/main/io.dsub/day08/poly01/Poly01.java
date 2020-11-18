@@ -1,4 +1,4 @@
-package main.io.dsub.day08.poly01;
+package io.dsub.day08.poly01;
 
 /**
  * 부모 클래스 타입으로 자식 클래스 타입의 객체를 참조하는 특징

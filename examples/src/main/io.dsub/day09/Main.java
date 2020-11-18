@@ -1,7 +1,8 @@
-package main.io.dsub.day09;
+package io.dsub.day09;
 
-import main.io.dsub.day09.enums.Family;
-import main.io.dsub.day09.interfaces.arithmetics.*;
+
+import io.dsub.day09.enums.Family;
+import io.dsub.day09.interfaces.arithmetics.*;
 
 public class Main {
     public static void main(String[] args) {

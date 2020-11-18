@@ -1,4 +1,4 @@
-package main.io.dsub.day07;
+package io.dsub.day07;
 
 public class InheritanceDemo {
     public static void main(String[] args) {

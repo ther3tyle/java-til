@@ -1,4 +1,4 @@
-package main.io.dsub.day07;
+package io.dsub.day07;
 
 public class Release extends BaseModel {
     public Release(String prodName) {

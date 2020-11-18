@@ -1,4 +1,4 @@
-package main.io.dsub.day08.practice;
+package io.dsub.day08.practice;
 
 /**
  * Abstract Stack

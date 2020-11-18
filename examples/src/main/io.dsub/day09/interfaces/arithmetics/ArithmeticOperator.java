@@ -1,4 +1,4 @@
-package main.io.dsub.day09.interfaces.arithmetics;
+package io.dsub.day09.interfaces.arithmetics;
 
 public interface ArithmeticOperator {
     int operate(int x, int y);

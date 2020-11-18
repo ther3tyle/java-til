@@ -1,4 +1,4 @@
-package main.io.dsub.day03;
+package io.dsub.day03;
 
 public class Practice1Loop {
     public static void main(String[] args) {

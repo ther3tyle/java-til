@@ -1,4 +1,4 @@
-package main.io.dsub.day09.enums;
+package io.dsub.day09.enums;
 
 public enum Job {
     STUDENT("Jack"), MARKETING("Orlando"), DEVELOPER("Jeff"), CHIEF("Cathy"), CHIEF_EXECUTIVE_OFFICER("Elon"); // Enumeration Constant

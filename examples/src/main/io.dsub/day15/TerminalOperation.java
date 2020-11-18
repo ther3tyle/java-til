@@ -1,4 +1,4 @@
-package main.io.dsub.day15;
+package io.dsub.day15;
 
 import java.util.stream.IntStream;
 import java.util.stream.Stream;

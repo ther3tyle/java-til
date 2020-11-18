@@ -1,4 +1,4 @@
-package main.io.dsub.day05;
+package io.dsub.day05;
 
 public class QuizReview {
 

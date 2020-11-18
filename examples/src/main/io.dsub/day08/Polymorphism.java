@@ -1,4 +1,4 @@
-package main.io.dsub.day08;
+package io.dsub.day08;
 
 /**
  * 다형성 (Polymorphism)

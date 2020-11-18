@@ -1,4 +1,4 @@
-package main.io.dsub.day03;
+package io.dsub.day03;
 
 /**
  * 반복문 (Loops)

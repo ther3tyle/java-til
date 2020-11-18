@@ -1,4 +1,4 @@
-package main.io.dsub.day09.enums;
+package io.dsub.day09.enums;
 
 /**
  * 열거형(Enumeration)

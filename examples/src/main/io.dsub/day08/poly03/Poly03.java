@@ -1,4 +1,4 @@
-package main.io.dsub.day08.poly03;
+package io.dsub.day08.poly03;
 
 /**
  * 공변 반환 타입 (Covariant return type)

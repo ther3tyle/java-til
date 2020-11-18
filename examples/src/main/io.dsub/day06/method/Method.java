@@ -1,4 +1,4 @@
-package main.io.dsub.day06.method;
+package io.dsub.day06.method;
 
 public class Method {
     int value;

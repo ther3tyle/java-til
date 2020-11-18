@@ -1,4 +1,4 @@
-package main.io.dsub.day14;
+package io.dsub.day14;
 
 public class ConsumerDemo {
     // Consumer is a functional interface

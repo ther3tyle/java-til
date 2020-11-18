@@ -1,4 +1,4 @@
-package main.io.dsub.day09.interfaces.arithmetics;
+package io.dsub.day09.interfaces.arithmetics;
 
 public class Calculator {
     private final ArithmeticOperator op;

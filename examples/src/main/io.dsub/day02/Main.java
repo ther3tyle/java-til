@@ -1,4 +1,4 @@
-package main.io.dsub.day02;
+package io.dsub.day02;
 
 public class Main {
     public static void main(String[] args) {

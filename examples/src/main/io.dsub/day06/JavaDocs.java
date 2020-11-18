@@ -1,4 +1,4 @@
-package main.io.dsub.day06;
+package io.dsub.day06;
 
 /**
  * 클래스에 대한 설명. 이 클래스는 자바독 클래스로서 자바독을 공부하기 위해...

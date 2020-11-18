@@ -1,4 +1,4 @@
-package main.io.dsub.day14;
+package io.dsub.day14;
 
 import java.util.Arrays;
 import java.util.function.BiFunction;

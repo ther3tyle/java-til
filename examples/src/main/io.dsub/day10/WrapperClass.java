@@ -1,4 +1,4 @@
-package main.io.dsub.day10;
+package io.dsub.day10;
 
 public class WrapperClass {
     // AUTOBOXING

@@ -1,4 +1,4 @@
-package main.io.dsub.day16;
+package io.dsub.day16;
 
 import java.util.*;
 import java.util.stream.Collectors;

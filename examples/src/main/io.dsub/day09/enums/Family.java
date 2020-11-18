@@ -1,4 +1,4 @@
-package main.io.dsub.day09.enums;
+package io.dsub.day09.enums;
 
 // 열거형 생성자를 이용한 enum 상수 초기화
 public enum Family {

@@ -1,4 +1,4 @@
-package main.io.dsub.day08.abstractexample;
+package io.dsub.day08.abstractexample;
 
 /**
  * 추상 클래스 (Abstract Class)

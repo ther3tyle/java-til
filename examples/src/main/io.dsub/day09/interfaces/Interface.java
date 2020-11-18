@@ -1,4 +1,4 @@
-package main.io.dsub.day09.interfaces;
+package io.dsub.day09.interfaces;
 
 interface IFoo {
     public static final int MEMBER_VAR = 10;

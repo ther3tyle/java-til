@@ -1,4 +1,4 @@
-package main.io.dsub.day17;
+package io.dsub.day17;
 
 public class InOutIntro {
 }

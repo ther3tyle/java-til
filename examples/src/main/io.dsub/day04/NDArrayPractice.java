@@ -1,4 +1,4 @@
-package main.io.dsub.day04;
+package io.dsub.day04;
 
 /**
  * N-D Array 연습
